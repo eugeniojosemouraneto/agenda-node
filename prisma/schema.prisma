@@ -9,3 +9,53 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model Category {
+  id      String @id @default(uuid())
+  name    String 
+  tasks   Task[]
+  id_user String
+  user    User   @relation(fields: [id_user], references: [id])
+
+  @@map("category")
+}
+
+model User {
+  id         String     @id @default(uuid())
+  username   String     @unique
+  email      String     @unique
+  created_at DateTime   @default(now())
+  categorys  Category[]
+  Task       Task[]
+  SubTask    SubTask[]
+
+  @@map("user")
+}
+
+model Task {
+  id                      String   @id @default(uuid())
+  created_at              DateTime @default(now())
+  title                   String   @unique 
+  maximum_completion_date DateTime @default(now())
+  completion_status       Boolean  @default(false)
+  description             String?
+  id_category             String
+  id_user                 String
+  category                Category @relation(fields: [id_category], references: [id])
+  user                    User     @relation(fields: [id_user], references: [id])
+  SubTask                 SubTask[]
+
+  @@map("task")
+}
+
+model SubTask {
+  id                String   @id @default(uuid())
+  created_at        DateTime @default(now())
+  subject           String   @unique
+  description       String?
+  completion_status Boolean @default(false)
+  id_task           String
+  id_user           String
+  task              Task @relation(fields: [id_task], references: [id])
+  user              User     @relation(fields: [id_user], references: [id])
+}
