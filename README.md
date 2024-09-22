@@ -9,5 +9,6 @@ dependences
     prisma
 
 >>prisma
+# mudar os comandos
 npx prisma generate
 npx prsima migrate
