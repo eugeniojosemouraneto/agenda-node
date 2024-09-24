@@ -1,11 +1,11 @@
 // controller
-import type { FastifyInstance } from 'fastify'
+import type { FastifyInstance } from "fastify";
 
 // controller
-import { ControllerUser } from '../controller/user.js'
+import { ControllerUser } from "../controller/user.js";
 
-const controllerUser = new ControllerUser()
+const controllerUser = new ControllerUser();
 
 export async function createdUser(app: FastifyInstance) {
-  app.post('/user', controllerUser.createdUser)
+	app.post("/user", controllerUser.createdUser);
 }
