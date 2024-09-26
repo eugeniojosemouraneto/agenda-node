@@ -9,3 +9,14 @@ const controllerUser = new ControllerUser();
 export async function createdUser(app: FastifyInstance) {
 	app.post("/user", controllerUser.createdUser);
 }
+
+export async function loginUser(app: FastifyInstance) {
+	app.post("/login", controllerUser.loginUser);
+}
+
+export async function changingUser(app: FastifyInstance) {
+	app.patch("/user/changing", {
+		preHandler: controllerUser.checkToken,
+		handler: controllerUser.changingUser,
+	});
+}

@@ -1,6 +1,6 @@
 [x]  created user
 [x]  token user
-[ ]  login user
+[x]  login user
 [ ]  changing a user's data
 [ ]  delete user account, but keep data
 [ ]  password recovery by email

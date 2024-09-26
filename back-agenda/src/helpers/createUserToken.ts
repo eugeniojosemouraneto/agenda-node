@@ -12,6 +12,13 @@ export function createUserToken(
 	request: FastifyRequest,
 	response: FastifyReply,
 ) {
+	const token = jwt.sign(
+		{
+			username: user.username,
+		},
+		"pi3.1315925359@",
+	);
+	console.log(token);
 	return response.status(200).send({
 		message: "User with token",
 		token: jwt.sign(
