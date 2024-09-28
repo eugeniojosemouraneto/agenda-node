@@ -28,10 +28,14 @@ export class ModelUser {
 		try {
 			return await prisma.user.update({
 				where: { username: username },
-				data: { username: username, email: email, password: password}
-			})
-		} catch(error) {
-			throw new Error("Unable to update user data")
+				data: {
+					username: username,
+					email: email,
+					password: password,
+				},
+			});
+		} catch (error) {
+			throw new Error("Unable to update user data");
 		}
 	}
 

@@ -16,7 +16,7 @@ export async function loginUser(app: FastifyInstance) {
 
 export async function changingUser(app: FastifyInstance) {
 	app.patch("/user/changing", {
-		preHandler: controllerUser.checkToken,
+		preHandler: ControllerUser.checkToken,
 		handler: controllerUser.changingUser,
 	});
 }

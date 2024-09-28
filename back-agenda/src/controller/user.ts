@@ -177,7 +177,10 @@ export class ControllerUser {
 			currentUser.email = user.email;
 
 		if (user.password && user.password !== currentUser.password)
-			currentUser.password = user.password;
+			currentUser.password = await bcrypt.hash(
+				user.password,
+				await bcrypt.genSalt(12),
+			);
 
 		const newUser = await modelUser.chagingUser(currentUser);
 		return response.status(201).send({
