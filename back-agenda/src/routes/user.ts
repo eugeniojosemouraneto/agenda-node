@@ -20,3 +20,10 @@ export async function changingUser(app: FastifyInstance) {
 		handler: controllerUser.changingUser,
 	});
 }
+
+export async function deleteUser(app: FastifyInstance) {
+	app.delete("/user/delete", {
+		preHandler: ControllerUser.checkToken,
+		handler: controllerUser.deleteUser,
+	});
+}

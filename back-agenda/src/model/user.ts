@@ -1,5 +1,6 @@
 // db, prisma
 import { PrismaClient } from "@prisma/client";
+import { deleteUser } from "../routes/user.js";
 
 const prisma = new PrismaClient();
 
@@ -59,5 +60,29 @@ export class ModelUser {
 		const isExist = await this.getByUserEmail(email);
 		if (isExist) return true;
 		return false;
+	}
+
+	async deleteUser(id: string) {
+		try {
+			const user = await prisma.user.findUnique({
+				where: {
+					id: id,
+				},
+			});
+			if (!user) throw new Error("User not found");
+
+			user.isDelete = true;
+			return await prisma.user.update({
+				where: { username: user.username },
+				data: {
+					username: user.username,
+					email: user.email,
+					password: user.password,
+					isDelete: user.isDelete,
+				},
+			});
+		} catch (error) {
+			throw new Error("unable to delete user");
+		}
 	}
 }

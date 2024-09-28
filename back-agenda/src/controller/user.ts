@@ -9,6 +9,7 @@ import { ModelUser } from "../model/user.js";
 // helpers
 import { createUserToken } from "../helpers/createUserToken.js";
 import { getToken } from "../helpers/getToken.js";
+import { deleteUser } from "../routes/user.js";
 
 const modelUser = new ModelUser();
 
@@ -187,5 +188,23 @@ export class ControllerUser {
 			message: "User data updated successfully",
 			user: newUser,
 		});
+	}
+
+	async deleteUser(request: FastifyRequest, response: FastifyReply) {
+		if (!request.headers.authorization)
+			return response.status(401).send("Token is missing");
+
+		const token = getToken(request.headers.authorization);
+		let currentUser: authenticatedUser | null = null;
+		try {
+			const decoded = jwt.verify(token, "pi3.14159265359@") as MeuPayload;
+			currentUser = await modelUser.getByUserUsername(decoded.username);
+			if (!currentUser) return response.status(401).send("User not found");
+
+			await modelUser.deleteUser(currentUser.id);
+			return response.status(200).send("User deleted sucessfully");
+		} catch (error) {
+			return response.status(401).send("Invalid token");
+		}
 	}
 }
