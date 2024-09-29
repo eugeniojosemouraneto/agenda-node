@@ -40,6 +40,7 @@ interface authenticatedUser {
 	email: string;
 	password: string;
 	created_at: Date;
+	isDelete: boolean;
 }
 
 export class ControllerUser {
@@ -130,18 +131,15 @@ export class ControllerUser {
 	) {
 		let currentUser: authenticatedUser | null = null;
 		if (request.headers.authorization) {
-			try {
-				const decoded = jwt.verify(
-					getToken(request.headers.authorization),
-					"pi3.14159265359@",
-				) as MeuPayload;
-				currentUser = await modelUser.getByUserUsername(decoded.username);
-				if (currentUser) currentUser.password = "";
-			} catch (error) {
-				return response.status(401).send("Invalid token");
-			}
+			const decoded = jwt.verify(
+				getToken(request.headers.authorization),
+				"pi3.14159265359@",
+			) as MeuPayload;
+			currentUser = await modelUser.getByUserUsername(decoded.username);
+			if (!currentUser) return response.status(401).send("User not found")
+			if (currentUser.isDelete) return response.status(401).send("Deactivated user")
+			currentUser.password = "";
 		}
-		console.log("check token", currentUser);
 		return currentUser;
 	}
 
