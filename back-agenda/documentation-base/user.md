@@ -3,6 +3,7 @@
 [x]  login user
 [x]  changing a user's data
 [x]  delete user account, but keep data
+[ ]  Update login functionality so that disabled profiles cannot log in
 [ ]  password recovery by email
 [ ]  confirmation of account creation by sending a link to the registered email
 [ ]  introduction to user photo
