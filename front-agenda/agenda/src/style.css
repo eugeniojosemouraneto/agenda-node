@@ -1,0 +1,9 @@
+:root {
+	--branco: #fafafa;
+	--preto: #323333;
+}
+
+body {
+	background-color: var(--branco);
+    color: var(--preto);
+}
