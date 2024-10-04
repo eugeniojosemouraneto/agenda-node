@@ -12,7 +12,7 @@ export function SideBar() {
             <img className={ styles.cover } src={imgUser} alt="Profile img" />
 
             <div className={styles.profile}>
-                <img className={ styles.avatar} src={avatarUser} />
+                <img className={ styles.avatar} src={avatarUser} alt=""/>
                 <strong>Eugenio Jose Moura Neto</strong>
             </div>
 
