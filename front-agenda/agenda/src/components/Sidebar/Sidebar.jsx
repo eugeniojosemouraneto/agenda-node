@@ -17,7 +17,7 @@ export function SideBar() {
             </div>
 
             <footer>
-                <a href="#"><PencilLine />Editar perfil</a>
+                <a href="www.google.com.br"><PencilLine />Editar perfil</a>
             </footer>
         </aside>
     )
