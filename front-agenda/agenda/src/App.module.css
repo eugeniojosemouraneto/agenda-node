@@ -1,0 +1,10 @@
+.wrapper {
+    max-width: 64rem; /* [largura total / 16], este calculo é para definir max-width, 16 é o equivalente de 1 rem*/
+    margin: 2rem auto;
+    padding: 0 1rem;
+
+    display: grid;
+    grid-template-columns: 155px 1fr;
+    gap: 2rem;
+    align-items: flex-start;
+}
