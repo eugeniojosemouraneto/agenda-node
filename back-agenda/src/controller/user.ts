@@ -136,8 +136,9 @@ export class ControllerUser {
 				"pi3.14159265359@",
 			) as MeuPayload;
 			currentUser = await modelUser.getByUserUsername(decoded.username);
-			if (!currentUser) return response.status(401).send("User not found")
-			if (currentUser.isDelete) return response.status(401).send("Deactivated user")
+			if (!currentUser) return response.status(401).send("User not found");
+			if (currentUser.isDelete)
+				return response.status(401).send("Deactivated user");
 			currentUser.password = "";
 		}
 		return currentUser;
