@@ -1,19 +1,4 @@
-import fastify from "fastify";
-import z from "zod";
-// routes
-import {
-	changingUser,
-	createdUser,
-	deleteUser,
-	loginUser,
-} from "./routes/user.js";
-
-const app = fastify().withTypeProvider();
-
-app.register(createdUser);
-app.register(loginUser);
-app.register(changingUser);
-app.register(deleteUser);
+import app from "./routes/total-router.js";
 
 app
 	.listen({

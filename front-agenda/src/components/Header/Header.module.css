@@ -1,0 +1,33 @@
+.Header {
+    height: 3.75rem;
+    background-color: var(--grey-800);
+
+    padding: 1rem 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Header .logo {
+    margin-left: 3.5rem;
+    display: flex;
+    align-items: center; /* Para centralizar verticalmente a imagem e o texto */
+    gap: 0.6rem;
+}
+
+.Header strong {
+    color: var(--grey-200);
+}
+
+.Header .logo img {
+    width: 1.75rem;
+}
+
+.Header .profilePicture img {
+    width: 2.2rem;
+    border-radius: 100%;
+    
+    justify-content: end !important;
+    margin-right: 1rem;
+}

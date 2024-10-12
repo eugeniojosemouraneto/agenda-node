@@ -1,0 +1,39 @@
+:root {
+    --white      : #FAFAFA;
+    --grey-100   : #E1E1E6;
+    --grey-300   : #C4C4CC;
+    --grey-400   : #8D8D99;
+    --grey-600   : #323238;
+    --grey-700   : #29292E;
+    --grey-800   : #202024;
+    --grey-900   : #121214;
+    --red-200    : #F84043;
+    --red-600    : #F80E12;
+    --orange-200 : #F9804C;
+    --orange-500 : #FF4D00;
+    --blue-200   : #5A56DD;
+    --blue-500   : #2700B5;
+
+    --gradient-90deg-red-200-600    : linear-gradient(90deg, var(--red-200), var(--red-600));
+    --gradient-90deg-orange-200-500 : linear-gradient(90deg, var(--orange-200), var(--orange-500));
+    --gradient-90deg-blue-200-500   : linear-gradient(90deg, var(--blue-200), var(--blue-500));
+    --gradient-90deg-grey-700-900   : linear-gradient(90deg, var(--grey-800), var(--grey-900));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: var(--gradient-90deg-grey-700-900);
+    color: var(--white);
+    -webkit-font-smoothing: antialiased;
+}
+
+body, input, textarea, button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+}
