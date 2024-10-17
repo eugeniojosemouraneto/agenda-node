@@ -1,0 +1,60 @@
+.content {
+    margin: 8.3rem;
+    padding: 2rem;
+    height: 20rem;
+
+    background: var(--grey-700);
+    border-radius: 16px;
+
+    display: flex;
+    gap: 8.35rem;
+}
+
+.content .profileAvatar img {
+    width: 16rem;
+    border-radius: 32%;
+}
+
+.content .information {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 33.5rem;
+
+    font-weight: 100;
+    color: var(--grey-200);
+}
+
+.title {
+    font-weight: bold; 
+    font-size: 16px;     
+}
+
+.titleDatas {
+    font-weight: 100;   
+}
+
+.buttonIcon {
+    margin-bottom: 1.125rem;
+    border: 0.025rem solid var(--grey-500);
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+}
+
+.textCenter {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;
+    height: 100%;
+}
+
+.taskInfo p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.taskData {
+    margin-left: auto; /* Garante que o valor vai para a extrema direita */
+}
+

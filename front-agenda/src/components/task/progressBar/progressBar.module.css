@@ -1,0 +1,23 @@
+.progressBar, .textExtremePosition p {
+    margin-left: 1.75rem;
+    margin-right: 1.75rem;
+    width: 34.875rem;
+}
+
+.progressBar {
+    height: 0.8125rem;
+    background-color: var(--grey-600); 
+    border-radius: 5px; 
+    overflow: hidden; 
+}
+
+.progressFill {
+    height: 100%; 
+    background-image: var(--gradient-90deg-red-200-600); /* Cor da parte preenchida */
+    transition: width 0.3s ease; 
+}
+
+.textExtremePosition p {
+    display: flex;
+    justify-content: space-between;
+}

@@ -3,9 +3,8 @@ import styles from './Header.module.css'
 import logoIcon from '../../assets/logo-icon.svg'
 import profilePicture from '../../assets/profile-picture.jpg'
 
-interface datas {
-    titlePage: string
-}
+// interfaces
+import { datas } from '../../interface/user'
 
 export default function Header(datasComponents: datas) {
     return (
