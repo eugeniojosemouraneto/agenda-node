@@ -1,12 +1,9 @@
 .taskSummary {
     background-color: var(--grey-800);
     border-radius: 5px;
-    margin-top: 1.3125rem;
+    margin-top: 1.3rem;
     margin-bottom: 1rem;
-    margin-right: 11.3125rem;
-    padding-left: 1.8125rem;
-    padding-right: 1.625rem;
-    padding-top: 1rem;
+    padding: 1rem;
 }
 
 .contentTaskSummary {
@@ -18,13 +15,17 @@
 }
 
 .column01 {
-    width: 70rem;
+    width: 21rem;
     padding-bottom: 1rem;
 }
 
+.column02 {
+    width:  17rem;
+    padding-bottom: 1rem;
+}
 
-.column01 {
-    width: 38rem;
+.column02 p {
+    margin-right: 1.5rem;
 }
 
 .column01 h1 {

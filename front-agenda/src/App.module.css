@@ -1,0 +1,11 @@
+.content {
+    margin: 12.5rem 11.8rem; 
+    display: flex; 
+    justify-content: space-between;
+    
+    gap: 8.9375rem;
+}
+
+.column01 {
+    width: 17.1875rem;
+}
